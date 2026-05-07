@@ -6,6 +6,7 @@ alwaysApply: true
 # AIOT 核心规则
 
 - **AIOT**：AI Operation Technology（基于大模型的 OT）。本仓库面向 PVE 上原生 **bench** 的 Frappe / ERPNext / HRMS 运维与二开辅助。
+- **品牌用语**：对用户可见的文案（Desk、`fixtures`、打印模板/Letter Head/Print Style 等单据名称、`hooks.py` 中的 **`app_title` / `app_publisher` / `app_description`** 等），**统一使用「AIOT」** 作为项目品牌字样；**不**使用 COS、SSI 等作为面向用户的品牌标识。**例外**：技术标识保持不变——Python **应用目录名 / `app_name`** 仍为 **`ssi_app`**，`hooks.fixtures` 中的 **`module` 筛选（如 `ssi_stock`、`ssi_accounts`）**、远端 **`ssi_app` Git 仓库名与分支惯例** 等不因品牌而改变。
 - **渐进披露**：先读 [docs/aiot/INDEX.md](docs/aiot/INDEX.md)，再读 **[docs/aiot/env/server-baseline.md](docs/aiot/env/server-baseline.md)**（可提交的服务器基线）；按需打开其余 L2、`*.local.md`（涉密）与 L1 skills；勿默认加载长篇文档全文。
 - **秘密**：不在规则、培训稿、audit 中写入 API Secret、私钥、明文密码；凭据仅 env 本地或用户当次提供。
 - **真实执行留痕**：对环境产生写影响的 SSH、`bench`、API 写、PVE 变更等结束后，按 [docs/aiot/audit/README.md](docs/aiot/audit/README.md) 追加一条简报；纯规划与只读可不记。

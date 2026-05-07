@@ -16,3 +16,4 @@ alwaysApply: true
 - **审计**：服务器侧产生写影响的 **`bench`/SSH** 等结束后，仍按 [docs/aiot/audit/README.md](docs/aiot/audit/README.md) 简报；**勿**写入密钥。
 - **只读生产凭据**：若服务器仅配置 **read-only** 拉取凭据，则 **`git push`** 永远在本地或具备写权限的环境完成。
 - **Translation / 译文**：用户**未明确要求**写入 **`ssi_app` fixtures**（或入库 JSON）时，默认只在**站点**维护（Desk **`Translation`** 或 REST 写入数据库）；**不把**此类补齐译文放进 app fixtures，除非用户明说需要版本化/多环境同步。
+- **品牌用语**：见 **`aiot-core`**——对用户可见的二开交付内容默认冠以 **AIOT**，不复用 COS/SSI 作为客户侧品牌；**`ssi_app` 包名与模块名（技术路径）不变**。
