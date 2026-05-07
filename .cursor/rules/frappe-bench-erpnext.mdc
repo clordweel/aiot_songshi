@@ -1,0 +1,11 @@
+---
+description: 原生 bench、ERPNext/HRMS 栈的约定与技能入口
+alwaysApply: true
+---
+
+# Frappe / bench / ERPNext
+
+- **版本**：以目标 VM 上 `bench version`、站点实际安装为准；不在对话中假设未确认的小版本。
+- **二开**：优先自定义 app，避免直接改 `frappe` / `erpnext` 核心。
+- **技能**：bench 运维见 `.cursor/skills/frappe-bench-site-ops/`；HTTP API 见 `.cursor/skills/erpnext-api-ops/`。
+- **长步骤**：安装/升级/事故详述写在 `docs/aiot/runbooks/`；事实表用 `docs/aiot/env/*.template.md`（local 副本勿提交）。

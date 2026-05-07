@@ -1,0 +1,11 @@
+---
+description: 二开 Python 代码风格与 Frappe 习惯
+globs: **/*.py
+alwaysApply: false
+---
+
+# Python（Frappe 二开）
+
+- 与仓库现有代码保持一致：命名、缩进、类型注解按项目惯例。
+- Frappe 约定：业务逻辑放在自定义 app；谨慎使用 `frappe.db.commit`、绕过权限的 API。
+- 改动后考虑 `migrate`、fixtures 与权限导出；大变更前提醒快照与 audit。

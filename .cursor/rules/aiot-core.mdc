@@ -1,0 +1,13 @@
+---
+description: AIOT 核心约束、渐进披露入口、执行留痕与培训目录策略
+alwaysApply: true
+---
+
+# AIOT 核心规则
+
+- **AIOT**：AI Operation Technology（基于大模型的 OT）。本仓库面向 PVE 上原生 **bench** 的 Frappe / ERPNext / HRMS 运维与二开辅助。
+- **渐进披露**：先读 [docs/aiot/INDEX.md](docs/aiot/INDEX.md)，再按需打开 L2 env、L1 skills；勿默认加载长篇文档全文。
+- **秘密**：不在规则、培训稿、audit 中写入 API Secret、私钥、明文密码；凭据仅 env 本地或用户当次提供。
+- **真实执行留痕**：对环境产生写影响的 SSH、`bench`、API 写、PVE 变更等结束后，按 [docs/aiot/audit/README.md](docs/aiot/audit/README.md) 追加一条简报；纯规划与只读可不记。
+- **培训目录 `docs/aiot/training/`**：HumanPrimary；除非用户明确要求教学/改稿/测验等，**勿**批量加载整目录进会话；需要时**单文件**读取指定章节。
+- 用户要求中文回复时优先使用中文。

@@ -1,0 +1,2 @@
+# Local environment facts (copy from *.template.md, fill secrets offline)
+docs/aiot/env/*.local.md
