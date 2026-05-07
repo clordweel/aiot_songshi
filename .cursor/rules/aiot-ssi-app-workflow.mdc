@@ -10,6 +10,7 @@ alwaysApply: true
 - **默认顺序**：
   1. 在 **`apps/ssi_app`** 内完成变更，执行 **`git commit`** 并 **`git push`** 到远端 **[github.com/clordweel/ssi_app](https://github.com/clordweel/ssi_app)**（分支以团队约定为准，常见 **`develop`**）。
   2. **再在 bench 服务器**上将 **`~/frappe-bench/apps/ssi_app`** 与远端 **单向对齐**：使用 **`git fetch` + `git pull`**（或与 **`bench update`** / CI 发布流程等效、仅自远端取更新的命令）。**不把服务器上的手工改动当作主线再写回 GitHub**，除非用户明确要求迁移或补丁入库。
+- **Git 优先、SCP 备选**：二开 app 源码默认只用 **`git push` / `git pull`** 同步；仅在 Git 暂不可用（凭据/网络/仓库未就绪）或经同意的紧急热修时，可用 **SCP** 等投递单文件，事后应 **`diff` 核对并补提交**，避免 bench 与远端长期分叉。
 - **说明**：持续交付场景下「同步」指对已克隆目录 **`pull`**；仅在初次装机或重建目录时用 **`bench get-app`** / **`git clone`**。统称「自远端单向更新」。
 - **部署收口**：拉取后按变更执行 **`bench build --app ssi_app`**（涉及前端时）、**`bench migrate`**、按需 **`bench restart`** / **`supervisorctl`**；重大变更前先快照（见 `aiot-core`）。
 - **审计**：服务器侧产生写影响的 **`bench`/SSH** 等结束后，仍按 [docs/aiot/audit/README.md](docs/aiot/audit/README.md) 简报；**勿**写入密钥。
