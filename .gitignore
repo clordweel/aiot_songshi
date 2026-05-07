@@ -1,2 +1,9 @@
 # Local environment facts (copy from *.template.md, fill secrets offline)
 docs/aiot/env/*.local.md
+
+# 临时工作区：脚本、下载件、一次性输出（仅 tmp/README.md 受版本控制）
+tmp/*
+!tmp/README.md
+
+# Nested bench apps (独立 Git 仓库；由各自 remote 管理，勿纳入本仓库)
+apps/ssi_app/
