@@ -7,7 +7,8 @@ description: 通过 Frappe/ERPNext REST API 查 meta、读 DocType、谨慎写�
 
 ## 前置
 
-- `docs/aiot/env/frappe-site.local.md`（或模板）：base URL、site 名；认证方式以站点为准（API Key / Secret、Token 等），**不在**对话或文档中泄露 Secret。
+- 环境与站点：先读 [server-baseline.md](../../../docs/aiot/env/server-baseline.md)、[frappe-site-baseline.md](../../../docs/aiot/env/frappe-site-baseline.md)（site、base URL 约定）；认证与密钥仅用 `frappe-site.local.md`（gitignore），**不在**对话或可追溯文档中泄露 Secret。
+- 栈目标：官方 **`develop`**（**v17 开发线**，如 `17.0.0-dev`）；精确版本以 `apps/erpnext/erpnext/__init__.py` 的 `__version__`、`bench version` 为准。API 行为与字段以现场 meta 与版本为准。
 
 ## 推荐流程
 
@@ -18,7 +19,7 @@ description: 通过 Frappe/ERPNext REST API 查 meta、读 DocType、谨慎写�
 
 ## 辅助材料
 
-- 任务拆解提示：[docs/aiot/prompts/api-task-decompose.md](docs/aiot/prompts/api-task-decompose.md)
+- 任务拆解提示：[api-task-decompose.md](../../../docs/aiot/prompts/api-task-decompose.md)
 
 ## 留痕
 

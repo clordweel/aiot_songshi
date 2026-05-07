@@ -11,11 +11,12 @@
 	python scripts/deploy_ssi_app.py --push
 	python scripts/deploy_ssi_app.py --push --copy-chart-templates
 
-环境变量（可选）::
+环境变量（可选；推荐写入 ``config/local.env``）::
 
 	set DEPLOY_SSI_SSH_TARGET=frappe@10.0.0.40
+	set AIOT_SSH_TARGET=frappe@10.0.0.40
 
-服务器真实写入结束后请按 ``docs/aiot/audit/README.md`` 追加简报。
+未设置 ``DEPLOY_SSI_*`` 时，脚本会依次读取 ``AIOT_*`` / ``AGENT_BENCH_*``（与 Agent 自检脚本一致）。
 """
 
 from __future__ import annotations
@@ -26,12 +27,37 @@ import subprocess
 import sys
 from pathlib import Path
 
+_SCRIPT_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(_SCRIPT_DIR / "lib"))
+from env_loader import load_optional_repo_env
 
-DEFAULT_SSH_TARGET = os.environ.get("DEPLOY_SSI_SSH_TARGET", "frappe@10.0.0.40")
+
+def _env_chain(*keys: str, default: str = "") -> str:
+	for k in keys:
+		v = os.environ.get(k, "").strip()
+		if v:
+			return v
+	return default
+
+
+if os.environ.get("AIOT_SKIP_LOCAL_ENV") != "1":
+	load_optional_repo_env(no_env_file=False)
+
+DEFAULT_SSH_TARGET = _env_chain(
+	"DEPLOY_SSI_SSH_TARGET",
+	"AIOT_SSH_TARGET",
+	"AGENT_BENCH_SSH_TARGET",
+	default="frappe@10.0.0.40",
+)
 DEFAULT_SERVER_APP_PATH = "~/frappe-bench/apps/ssi_app"
-DEFAULT_BENCH_ROOT = "~/frappe-bench"
+DEFAULT_BENCH_ROOT = _env_chain("AIOT_BENCH_ROOT", "AGENT_BENCH_ROOT", default="~/frappe-bench")
 DEFAULT_BRANCH = "develop"
-DEFAULT_SITE = os.environ.get("DEPLOY_SSI_SITE", "10-0-0-40.sslip.io")
+DEFAULT_SITE = _env_chain(
+	"DEPLOY_SSI_SITE",
+	"AIOT_BENCH_SITE",
+	"AGENT_BENCH_SITE",
+	default="10-0-0-40.sslip.io",
+)
 
 
 def _posix_single_quote(s: str) -> str:

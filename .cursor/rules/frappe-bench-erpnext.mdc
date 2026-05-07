@@ -5,7 +5,8 @@ alwaysApply: true
 
 # Frappe / bench / ERPNext
 
-- **版本**：以目标 VM 上 `bench version`、站点实际安装为准；不在对话中假设未确认的小版本。
+- **版本与源码线**：本仓库目标为官方 **ERPNext / Frappe Git 仓库的 `develop` 分支**（当前上游为 **v17 开发线**，示例 `17.0.0-dev`，以 [frappe/erpnext 仓库 `develop`：`erpnext/__init__.py` 中 `__version__`](https://raw.githubusercontent.com/frappe/erpnext/develop/erpnext/__init__.py) 为准）。以目标机 `bench version`、`apps/erpnext/erpnext/__init__.py` 及官方 **develop** 文档为准；不在对话中假设未确认的 commit 或小版本。
+- **运行身份**：依照 Frappe **最佳实践** 创建 **专用 Unix 用户**（常见名 `frappe`）持有 `frappe-bench` 目录与 `bench` 进程，避免长期以 root 运行；`sudo` 仅用于系统级依赖。
 - **二开**：优先自定义 app，避免直接改 `frappe` / `erpnext` 核心。
 - **技能**：bench 运维见 `.cursor/skills/frappe-bench-site-ops/`；HTTP API 见 `.cursor/skills/erpnext-api-ops/`。
-- **长步骤**：安装/升级/事故详述写在 `docs/aiot/runbooks/`；事实表用 `docs/aiot/env/*.template.md`（local 副本勿提交）。
+- **长步骤**：安装/升级/事故详述写在 `docs/aiot/runbooks/`；**可提交**基线见 [docs/aiot/env/server-baseline.md](docs/aiot/env/server-baseline.md)；涉密用 `docs/aiot/env/*.local.md`（勿提交）。

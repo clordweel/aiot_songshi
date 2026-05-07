@@ -14,14 +14,17 @@
 
 - **[env/server-baseline.md](env/server-baseline.md)** — **服务器基线（可提交）**：SSH、OS、资源、目标分支、运行时栈摘要；跨会话 / Agent 优先读此文件。
 - **[env/frappe-site-baseline.md](env/frappe-site-baseline.md)** — **站点基线（可提交）**：site 名、URL、应用线等非机密约定。
+- [config/README.md](../../config/README.md) — **脚本/Agent 本地变量**：可提交的示例 `agent-connect.env.example` 与 gitignore 的 `local.env`。
 - [env/pve-vm.template.md](env/pve-vm.template.md) — PVE 空白表（复制为 `pve-vm.local.md` 仅供本地补充）。
 - [env/frappe-site.template.md](env/frappe-site.template.md) — 站点空白表（复制为 `frappe-site.local.md` 存密钥等）。
 
 ## 运行与排错（L3）
 
 - [scripts/deploy_ssi_app.py](../../scripts/deploy_ssi_app.py) — **`ssi_app`**：SSH 至 bench，远端 `git pull` + `migrate` / `build` / `restart`（可选 `--push`、`--copy-chart-templates`）
+- [scripts/agent_rest_smoke.py](../../scripts/agent_rest_smoke.py)、[scripts/agent_mcp_ping.py](../../scripts/agent_mcp_ping.py)、[scripts/agent_bench_ssh.py](../../scripts/agent_bench_ssh.py) — Agent **REST / MCP / bench SSH** 自检（凭证 **`config/local.env`**，模板见 [config/agent-connect.env.example](../../config/agent-connect.env.example)）
 - [runbooks/](runbooks/) — 快照、回滚、升级等长步骤
 - [runbooks/frappe-erpnext-install-prep.md](runbooks/frappe-erpnext-install-prep.md) — Frappe / ERPNext（bench）安装前检查清单
+- [runbooks/frappe-assistant-core-fac.md](runbooks/frappe-assistant-core-fac.md) — Frappe_Assistant_Core（FAC）安装与 MCP Endpoint
 - [runbooks/pre-change-snapshot.md](runbooks/pre-change-snapshot.md) — 变更前快照占位
 
 ## 执行留痕（Audit）
