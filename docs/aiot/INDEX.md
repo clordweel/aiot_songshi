@@ -2,18 +2,27 @@
 
 本文是代理与人类查阅长文的**目录**，优先读本文件再下钻；勿一次性加载 `training/` 全文。
 
+## 仓库本地（不入库或部分入库）
+
+- [tmp/README.md](../../tmp/README.md) — 根目录 `tmp/` 临时文件区（除本说明外默认 gitignore）
+
 ## 术语
 
 - [glossary.md](glossary.md) — AIOT、bench、site、DocType、PVE 等名词
 
 ## 环境事实（L2）
 
-- [env/pve-vm.template.md](env/pve-vm.template.md) — PVE 虚拟机占位表（复制为 `pve-vm.local.md` 后填写）
-- [env/frappe-site.template.md](env/frappe-site.template.md) — Frappe / ERPNext 站点占位表（复制为 `frappe-site.local.md`）
+- **[env/server-baseline.md](env/server-baseline.md)** — **服务器基线（可提交）**：SSH、OS、资源、目标分支、运行时栈摘要；跨会话 / Agent 优先读此文件。
+- **[env/frappe-site-baseline.md](env/frappe-site-baseline.md)** — **站点基线（可提交）**：site 名、URL、应用线等非机密约定。
+- [env/pve-vm.template.md](env/pve-vm.template.md) — PVE 空白表（复制为 `pve-vm.local.md` 仅供本地补充）。
+- [env/frappe-site.template.md](env/frappe-site.template.md) — 站点空白表（复制为 `frappe-site.local.md` 存密钥等）。
 
 ## 运行与排错（L3）
 
+- [scripts/deploy_ssi_app.py](../../scripts/deploy_ssi_app.py) — **`ssi_app`**：SSH 至 bench，远端 `git pull` + `migrate` / `build` / `restart`（可选 `--push`、`--copy-chart-templates`）
 - [runbooks/](runbooks/) — 快照、回滚、升级等长步骤
+- [runbooks/frappe-erpnext-install-prep.md](runbooks/frappe-erpnext-install-prep.md) — Frappe / ERPNext（bench）安装前检查清单
+- [runbooks/pre-change-snapshot.md](runbooks/pre-change-snapshot.md) — 变更前快照占位
 
 ## 执行留痕（Audit）
 
@@ -35,11 +44,11 @@
 |------|------|
 | L0 | `.cursor/rules/*.mdc` |
 | L1 | `.cursor/skills/*/SKILL.md` |
-| L2 | `docs/aiot/env/*.md` |
+| L2 | **已提交**：`server-baseline.md`、`frappe-site-baseline.md`；模板与 `*.local.md`（涉密、gitignore） |
 | L3 | `docs/aiot/runbooks/` |
 | Audit | `docs/aiot/audit/` |
 | Training | `docs/aiot/training/`（默认不进入模型上下文；按需单文件读取） |
 
-**代理默认顺序**：本 INDEX → env（模板或 local）→ 相关 skill。
+**代理默认顺序**：本 INDEX → **[env/server-baseline.md](env/server-baseline.md)**（及按需 `frappe-site-baseline.md`）→ 模板 / `*.local.md`（仅涉密）→ 相关 skill。
 
 **真实执行**（SSH、bench 写操作、API 写、PVE 变更等）结束后：按 [audit/README.md](audit/README.md) 追加一条简报。
