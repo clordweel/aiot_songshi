@@ -22,6 +22,7 @@
 ## 运行与排错（L3）
 
 - [scripts/deploy_ssi_app.py](../../scripts/deploy_ssi_app.py) — **`ssi_app`**：SSH 至 bench，远端 `git pull` + `migrate` / `build` / `restart`（可选 `--push`、`--copy-chart-templates`）
+- [scripts/pack_audits.py](../../scripts/pack_audits.py) — 按 **`--since` / `--until`**（日期或日期时间）筛选仓库根目录 **`audits/`** 并打成 zip（默认输出 `tmp/`）
 - [scripts/agent_rest_smoke.py](../../scripts/agent_rest_smoke.py)、[scripts/agent_mcp_ping.py](../../scripts/agent_mcp_ping.py)、[scripts/agent_bench_ssh.py](../../scripts/agent_bench_ssh.py) — Agent **REST / MCP / bench SSH** 自检（凭证 **`config/local.env`**，模板见 [config/agent-connect.env.example](../../config/agent-connect.env.example)）
 - [runbooks/](runbooks/) — 快照、回滚、升级等长步骤
 - [runbooks/frappe-erpnext-install-prep.md](runbooks/frappe-erpnext-install-prep.md) — Frappe / ERPNext（bench）安装前检查清单
