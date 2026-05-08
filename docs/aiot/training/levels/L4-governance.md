@@ -1,8 +1,8 @@
 # L4：治理、审批与安全（占位）
 
 - **AIOT** 场景下的操作责任：人类审批与代理建议的边界。
-- **Audit**：凡真实写操作须可追溯；见 [../../audit/README.md](../../audit/README.md)。
+- **Audit**：凡真实写操作须可追溯；简报在仓库根目录 **`audits/`**（不入库），字段见 [../../AUDITS.md](../../AUDITS.md)。
 - 密钥、API Secret、生产库口令：**不得**进入培训正文、规则与 Git 明文；使用 env 模板与密钥管理。
-- 合规若禁止 audit 入库：在 `audit/README` 约定替代方式（工单 URL 等）。
+- 合规若禁止简报入库：本仓库已将 **`audits/`** gitignore；可按 `AUDITS.md` 约定工单 URL 等替代方式。
 
 *后续补充组织内审批流与数据分级。*

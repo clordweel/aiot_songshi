@@ -7,4 +7,4 @@
 3. **权限**：Role、Permission、Workspace；是否需导出权限到 fixtures。
 4. **报表/打印格式/客户端脚本**：联动查询与导出。
 5. **定时任务**：`hooks.py` 中 scheduled jobs。
-6. **真实执行**：bench 命令或部署后写 `docs/aiot/audit/` 简报；大变更前见 `runbooks/pre-change-snapshot.md`。
+6. **真实执行**：bench 命令或部署后在仓库根目录 `audits/` 写简报（约定见 `docs/aiot/AUDITS.md`）；大变更前见 `runbooks/pre-change-snapshot.md`。

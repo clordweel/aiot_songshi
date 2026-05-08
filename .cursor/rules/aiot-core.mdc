@@ -9,7 +9,7 @@ alwaysApply: true
 - **品牌用语**：对用户可见的文案（Desk、`fixtures`、打印模板/Letter Head/Print Style 等单据名称、`hooks.py` 中的 **`app_title` / `app_publisher` / `app_description`** 等），**统一使用「AIOT」** 作为项目品牌字样；**不**使用 COS、SSI 等作为面向用户的品牌标识。**例外**：技术标识保持不变——Python **应用目录名 / `app_name`** 仍为 **`ssi_app`**，`hooks.fixtures` 中的 **`module` 筛选（如 `ssi_stock`、`ssi_accounts`）**、远端 **`ssi_app` Git 仓库名与分支惯例** 等不因品牌而改变。
 - **渐进披露**：先读 [docs/aiot/INDEX.md](docs/aiot/INDEX.md)，再读 **[docs/aiot/env/server-baseline.md](docs/aiot/env/server-baseline.md)**（可提交的服务器基线）；按需打开其余 L2、`*.local.md`（涉密）与 L1 skills；勿默认加载长篇文档全文。
 - **秘密**：不在规则、培训稿、audit 中写入 API Secret、私钥、明文密码；凭据仅 env 本地或用户当次提供。
-- **真实执行留痕**：对环境产生写影响的 SSH、`bench`、API 写、PVE 变更等结束后，按 [docs/aiot/audit/README.md](docs/aiot/audit/README.md) 追加一条简报；纯规划与只读可不记。
+- **真实执行留痕**：对环境产生写影响的 SSH、`bench`、API 写、PVE 变更等结束后，按仓库根目录 `audits/` 追加一条简报（字段见 [docs/aiot/AUDITS.md](docs/aiot/AUDITS.md)，该目录默认不入库）；纯规划与只读可不记。
 - **重大 / 高风险操作**：在建议或执行前**提醒**维护者为服务器创建**可恢复快照**（如 PVE 虚拟机快照）；若宿主使用 **Ubuntu LVM** 且团队允许，可提示评估 **LVM 逻辑卷快照** 是否可用（须以现场存储与策略为准）。详见 [docs/aiot/runbooks/pre-change-snapshot.md](docs/aiot/runbooks/pre-change-snapshot.md)。
 - **本地临时目录**：仓库根目录 `tmp/` 供临时脚本与文件使用（除 `tmp/README.md` 外均 gitignore）。
 - **会话与子代理**：当出现以下情况时，**适当时机提醒**用户评估是否 **新开 Agent 会话**（减少历史噪声、贴合新目标）或 **子代理 / 并行任务**（例如专人探索仓库、长跑终端、与主对话的方案讨论分离）——最终以用户习惯为准。典型信号：**上下文已很长**仍要继续无关新主题；**同一会话**内已完成大块里程碑（如装完 bench）将转入另一类任务；**多路并行**调研且易互相污染结论。

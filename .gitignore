@@ -7,6 +7,9 @@ config/local.env
 # 向下兼容（deprecated）：若仍存在则会被 env_loader 读取
 scripts/agent_connect.local.env
 
+# 执行留痕简报（与本仓库 docs/ 同级目录 audits/；约定见 docs/aiot/AUDITS.md）
+/audits/
+
 # 临时工作区：脚本、下载件、一次性输出（仅 tmp/README.md 受版本控制）
 tmp/*
 !tmp/README.md

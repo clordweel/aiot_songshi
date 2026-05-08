@@ -23,4 +23,4 @@ description: 通过 Frappe/ERPNext REST API 查 meta、读 DocType、谨慎写�
 
 ## 留痕
 
-- 对**真实环境**的 API **写操作**完成后：按 `docs/aiot/audit/README.md` 记一条简报（DocType、动作摘要、结果；**勿**贴 Secret）。
+- 对**真实环境**的 API **写操作**完成后：在仓库根目录 **`audits/`** 记一条简报（字段见 `docs/aiot/AUDITS.md`；DocType、动作摘要、结果；**勿**贴 Secret）。

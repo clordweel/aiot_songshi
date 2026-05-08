@@ -7,5 +7,5 @@ alwaysApply: false
 # 培训文档编写
 
 - 术语与 [docs/aiot/glossary.md](docs/aiot/glossary.md) 一致；**AIOT** 含义固定为 AI Operation Technology。
-- 交叉引用 env、runbook、audit、prompts 用相对路径；正文中**不得**出现真实密钥或生产口令。
+- 交叉引用 env、runbook、仓库根目录 `audits/`（简报）、[`docs/aiot/AUDITS.md`](../../docs/aiot/AUDITS.md)、prompts 用相对路径；正文中**不得**出现真实密钥或生产口令。
 - `L0-cursor-models` 以**档位与场景**为主；具体 Cursor 模型商品名仅作可替换附录并注明及时更新。

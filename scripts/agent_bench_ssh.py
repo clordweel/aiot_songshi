@@ -12,7 +12,7 @@
 
 	AIOT_SSH_TARGET / AIOT_BENCH_ROOT（推荐）；兼容 AGENT_BENCH_*；可选 ``config/local.env``
 
-服务器真实写入结束后请按 ``docs/aiot/audit/README.md`` 追加简报。
+服务器真实写入结束后请在仓库根目录 ``audits/`` 追加简报（字段见 ``docs/aiot/AUDITS.md``）。
 """
 
 from __future__ import annotations

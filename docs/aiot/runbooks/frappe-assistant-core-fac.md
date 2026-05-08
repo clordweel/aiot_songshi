@@ -82,7 +82,7 @@ python scripts/agent_mcp_ping.py --url "https://<site>/api/method/frappe_assista
 2. **REST**：`python scripts/agent_rest_smoke.py`（需 `FRAPPE_SITE_URL` + Key/Secret）。
 3. **MCP**：安装 FAC 并拿到 Bearer/token 后 `python scripts/agent_mcp_ping.py`。
 
-写入完成后：按 [audit/README.md](../audit/README.md) 简报。
+写入完成后：在仓库根目录 **`audits/`** 按 [AUDITS.md](../AUDITS.md) 简报。
 
 ---
 

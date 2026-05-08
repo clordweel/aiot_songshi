@@ -58,4 +58,4 @@ python scripts/agent_bench_ssh.py
 
 ## 留痕
 
-对站点产生真实写入（REST PUT、bench migrate、`bench execute` 写库等）后：按 [docs/aiot/audit/README.md](../../../docs/aiot/audit/README.md) 简报；**勿**贴 Secret。
+对站点产生真实写入（REST PUT、bench migrate、`bench execute` 写库等）后：在仓库根目录 **`audits/`** 按 [AUDITS.md](../../../docs/aiot/AUDITS.md) 记简报；**勿**贴 Secret。

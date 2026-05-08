@@ -26,9 +26,9 @@ sudo pvs 2>/dev/null; sudo vgs 2>/dev/null; sudo lvs 2>/dev/null
 
 是否采用 LVM 快照由你与存储策略决定；不可用或未启用 LVM 时回到 **§1** 或文件级备份。
 
-## 3. 与 audit 配合
+## 3. 与 `audits/` 配合
 
-快照创建完成后：在 `docs/aiot/audit/` 按 [README.md](../audit/README.md) 记一笔（类型可写 `pve` / `backup` / `lvm_snapshot` 等），便于审批与事后核对。
+快照创建完成后：在仓库根目录 `audits/` 按 [AUDITS.md](../AUDITS.md) 记一笔（类型可写 `pve` / `backup` / `lvm_snapshot` 等），便于审批与事后核对。
 
 ## 4. 对代理的期望
 

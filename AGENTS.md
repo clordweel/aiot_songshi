@@ -6,5 +6,5 @@
 4. **环境事实**：先读 **[docs/aiot/env/server-baseline.md](docs/aiot/env/server-baseline.md)**（可提交）；站点线 [frappe-site-baseline.md](docs/aiot/env/frappe-site-baseline.md)。密钥等：`docs/aiot/env/*.local.md` 或 **`config/local.env`**（均 gitignore，模板见 `config/agent-connect.env.example`）。
 5. **临时目录**：根目录 `tmp/` 放本地脚本与临时输出（见 `tmp/README.md`）；默认不提交。
 6. **培训** `docs/aiot/training/`：HumanPrimary；仅当用户显式要求教学/改稿等时**单文件**读取，勿通读全树。
-7. **真实执行**后：按 [docs/aiot/audit/README.md](docs/aiot/audit/README.md) 追加简报。
+7. **真实执行**后：在仓库根目录 **`audits/`** 追加简报（约定见 [docs/aiot/AUDITS.md](docs/aiot/AUDITS.md)；该目录不入库）。
 8. **长上下文 / 换阶段**时：可考虑新开 Agent 会话或使用子代理（见 `aiot-core` 规则）。

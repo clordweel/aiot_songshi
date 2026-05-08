@@ -23,5 +23,5 @@ description: 在原生 bench 环境下运维站点、migrate、缓存与进程�
 
 ## 代理注意
 
-- 执行任何在目标机上产生**实际效果**的 `bench`/shell 命令后：按 `docs/aiot/audit/README.md` 写一条简报（环境、命令摘要、结果；**勿**贴密钥）。
+- 执行任何在目标机上产生**实际效果**的 `bench`/shell 命令后：在仓库根目录 **`audits/`** 写一条简报（字段见 `docs/aiot/AUDITS.md`：环境、命令摘要、结果；**勿**贴密钥）。
 - 不在技能中重复官方长文档；不确定时引导查 Context7 / Frappe 官方文档或现场 `bench --help`。

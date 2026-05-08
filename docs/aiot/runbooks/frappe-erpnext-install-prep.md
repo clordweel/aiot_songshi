@@ -94,7 +94,7 @@
 
 - [ ] `bench version`、各 app 分支、站点列表记入 `docs/aiot/env/frappe-site.local.md`。
 
-- [ ] 对**真实改配置的命令**、`migrate`、开放端口等：按 `docs/aiot/audit/README.md` 留痕。
+- [ ] 对**真实改配置的命令**、`migrate`、开放端口等：按仓库根目录 `audits/` 留痕（约定见 `docs/aiot/AUDITS.md`）。
 
 
 

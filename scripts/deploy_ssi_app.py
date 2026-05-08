@@ -87,7 +87,7 @@ def is_repo_dirty(app_dir: Path) -> tuple[bool, str]:
 
 def print_audit_hint(*, server_app_path: str, dry_run: bool) -> None:
 	print("")
-	print("审计提示（简报见 docs/aiot/audit/README.md）：")
+	print("审计提示（简报目录：仓库根目录 audits/，约定见 docs/aiot/AUDITS.md）：")
 	print(f"  - Git：远端路径 {server_app_path}（仅 ssi_app 仓库），不写 frappe/erpnext 源码仓库内的手写补丁。")
 	print("  - bench：migrate / build / restart 在 ~/frappe-bench 根目录执行。")
 	if dry_run:

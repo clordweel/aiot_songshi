@@ -44,4 +44,4 @@
 
 1. **装机或重大变更后**：更新本页表格与 **frappe-site-baseline.md**。  
 2. **与 `pve-vm.local.md` 分工**：`*.local.md` 只放**不宜入库**的补充；与 baseline **不重复**粘贴长表。  
-3. **审计**：执行留痕见 `docs/aiot/audit/`。
+3. **审计**：执行留痕见仓库根目录 `audits/`（约定见 `docs/aiot/AUDITS.md`，不入库）。

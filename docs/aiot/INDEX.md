@@ -5,6 +5,7 @@
 ## 仓库本地（不入库或部分入库）
 
 - [tmp/README.md](../../tmp/README.md) — 根目录 `tmp/` 临时文件区（除本说明外默认 gitignore）
+- 仓库根目录 **`audits/`** — 真实执行简报 Markdown（**gitignore**；字段与模板见 [AUDITS.md](AUDITS.md)）
 
 ## 术语
 
@@ -29,7 +30,7 @@
 
 ## 执行留痕（Audit）
 
-- [audit/README.md](audit/README.md) — 真实执行后简报模板与策略；**重大变更详述进 runbook，日常可核查进 audit**
+- [AUDITS.md](AUDITS.md) — 简报字段与策略（简报正文落在仓库根目录 **`audits/`**，不入库）；**重大变更详述进 runbook，日常可核查进 `audits/`**
 
 ## 培训（HumanPrimary）
 
@@ -49,9 +50,9 @@
 | L1 | `.cursor/skills/*/SKILL.md` |
 | L2 | **已提交**：`server-baseline.md`、`frappe-site-baseline.md`；模板与 `*.local.md`（涉密、gitignore） |
 | L3 | `docs/aiot/runbooks/` |
-| Audit | `docs/aiot/audit/` |
+| Audit | 仓库根目录 `audits/`（不入库；约定见 [AUDITS.md](AUDITS.md)） |
 | Training | `docs/aiot/training/`（默认不进入模型上下文；按需单文件读取） |
 
 **代理默认顺序**：本 INDEX → **[env/server-baseline.md](env/server-baseline.md)**（及按需 `frappe-site-baseline.md`）→ 模板 / `*.local.md`（仅涉密）→ 相关 skill。
 
-**真实执行**（SSH、bench 写操作、API 写、PVE 变更等）结束后：按 [audit/README.md](audit/README.md) 追加一条简报。
+**真实执行**（SSH、bench 写操作、API 写、PVE 变更等）结束后：在仓库根目录 **`audits/`** 追加一条简报（约定见 [AUDITS.md](AUDITS.md)）。
