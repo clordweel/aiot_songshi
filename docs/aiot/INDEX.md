@@ -40,6 +40,7 @@
 
 ## 提示模板
 
+- [prompts/deliver-push-pull.md](prompts/deliver-push-pull.md) — **口令**：推送部署 / 服务器拉取 / 父仓库-only；对应 Cursor **`/deliver-*`** 指令与 **`aiot-deliver-push-pull-deploy`** skill
 - [prompts/api-task-decompose.md](prompts/api-task-decompose.md) — API 任务拆解
 - [prompts/custom-app-change.md](prompts/custom-app-change.md) — 自定义 app 变更前自检
 
